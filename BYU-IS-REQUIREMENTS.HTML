@@ -10,107 +10,172 @@
 Info found here: <a href="https://marriotschool.byu.edu/infosys/">Requirements</a>
 </h1>
 <body>
-    <label>IS 201</label>
-<select id="IS201">
-    <option value="A">A</option>
-    <option value="A-">A-</option>
-    <option value="B+">B+</option>
-    <option value="B">B</option>
-    <option value="B-">B-</option>
-    <option value="C+">C+</option>
-    <option value="C">C</option>
-    <option value="D+">D+</option>
-    <option value="D">D</option>
-    <option value="D-">D-</option>
-    <option value="E">E</option>
-</select>
-<Label> Retake</Label>
-<input type="checkbox" id="201retake">
-<br><br>
-
-<label>IS 303/CS 142</label>
-<select id="IS303">
-    <option value="A">A</option>
-    <option value="A-">A-</option>
-    <option value="B+">B+</option>
-    <option value="B">B</option>
-    <option value="B-">B-</option>
-    <option value="C+">C+</option>
-    <option value="C">C</option>
-    <option value="D+">D+</option>
-    <option value="D">D</option>
-    <option value="D-">D-</option>
-    <option value="E">E</option>
-</select>
-<Label>Retake</Label>
-<input type="checkbox" id="303retake">
-<br><br>
-
-<label>ACC 200</label>
-<select id="ACC200">
-    <option value="A">A</option>
-    <option value="A-">A-</option>
-    <option value="B+">B+</option>
-    <option value="B">B</option>
-    <option value="B-">B-</option>
-    <option value="C+">C+</option>
-    <option value="C">C</option>
-    <option value="D+">D+</option>
-    <option value="D">D</option>
-    <option value="D-">D-</option>
-    <option value="E">E</option>
-</select>
-<Label>Retake</Label>
-<input type="checkbox" id="ACCretake"> 
-<br><br> 
-
-<label>FIN 201</label>
-<select id="FIN201">
-    <option value="A">A</option>
-    <option value="A-">A-</option>
-    <option value="B+">B+</option>
-    <option value="B">B</option>
-    <option value="B-">B-</option>
-    <option value="C+">C+</option>
-    <option value="C">C</option>
-    <option value="D+">D+</option>
-    <option value="D">D</option>
-    <option value="D-">D-</option>
-    <option value="E">E</option>
-</select>
-<Label>Retake</Label>
-<input type="checkbox" id="FINretake"> 
-<br><br> 
-
-<label>MKTG 201</label>
-<select id="MKTG201">
-    <option value="A">A</option>
-    <option value="A-">A-</option>
-    <option value="B+">B+</option>
-    <option value="B">B</option>
-    <option value="B-">B-</option>
-    <option value="C+">C+</option>
-    <option value="C">C</option>
-    <option value="D+">D+</option>
-    <option value="D">D</option>
-    <option value="D-">D-</option>
-    <option value="E">E</option>
-</select>
-<Label>Retake</Label>
-<input type="checkbox" id="MKTGretake"> 
-<br><br>
-
-<p>
-    <label>BYU Overall GPA:</label>
-    <input type="text" id="GPA" size="4">
+    <form id="ISReqs" name="myIS">
+        <label>IS 201</label>
+    <select id="IS201" autofocus>
+        <option value="A">A</option>
+        <option value="A-">A-</option>
+        <option value="B+">B+</option>
+        <option value="B">B</option>
+        <option value="B-">B-</option>
+        <option value="C+">C+</option>
+        <option value="C">C</option>
+        <option value="D+">D+</option>
+        <option value="D">D</option>
+        <option value="D-">D-</option>
+        <option value="E">E</option>
+        <option value="blank"></option>
+    </select>
+    <Label> Retake</Label>
+    <input type="checkbox" id="201retake">
     <br><br>
-    <label>BYU Last 30 Credits GPA:</label>
-    <input type="text" id="Last30" size="4">
-</p>
-<p> 
-    <input type="button" value="Calculate" onclick="//Put calc functions here">
+
+    <label>IS 303/CS 142</label>
+    <select id="IS303">
+        <option value="A">A</option>
+        <option value="A-">A-</option>
+        <option value="B+">B+</option>
+        <option value="B">B</option>
+        <option value="B-">B-</option>
+        <option value="C+">C+</option>
+        <option value="C">C</option>
+        <option value="D+">D+</option>
+        <option value="D">D</option>
+        <option value="D-">D-</option>
+        <option value="E">E</option>
+        <option value="blank"></option>
+    </select>
+    <Label>Retake</Label>
+    <input type="checkbox" id="303retake">
     <br><br>
-    <input type="button" value="Reset" onclick="//Put reset functions here">
-</p>
+
+    <label>ACC 200</label>
+    <select id="ACC200">
+        <option value="A">A</option>
+        <option value="A-">A-</option>
+        <option value="B+">B+</option>
+        <option value="B">B</option>
+        <option value="B-">B-</option>
+        <option value="C+">C+</option>
+        <option value="C">C</option>
+        <option value="D+">D+</option>
+        <option value="D">D</option>
+        <option value="D-">D-</option>
+        <option value="E">E</option>
+        <option value="blank"></option>
+    </select>
+    <Label>Retake</Label>
+    <input type="checkbox" id="ACCretake"> 
+    <br><br> 
+
+    <label>FIN 201</label>
+    <select id="FIN201">
+        <option value="A">A</option>
+        <option value="A-">A-</option>
+        <option value="B+">B+</option>
+        <option value="B">B</option>
+        <option value="B-">B-</option>
+        <option value="C+">C+</option>
+        <option value="C">C</option>
+        <option value="D+">D+</option>
+        <option value="D">D</option>
+        <option value="D-">D-</option>
+        <option value="E">E</option>
+        <option value="blank"></option>
+    </select>
+    <Label>Retake</Label>
+    <input type="checkbox" id="FINretake"> 
+    <br><br> 
+
+    <label>MKTG 201</label>
+    <select id="MKTG201">
+        <option value="A">A</option>
+        <option value="A-">A-</option>
+        <option value="B+">B+</option>
+        <option value="B">B</option>
+        <option value="B-">B-</option>
+        <option value="C+">C+</option>
+        <option value="C">C</option>
+        <option value="D+">D+</option>
+        <option value="D">D</option>
+        <option value="D-">D-</option>
+        <option value="E">E</option>
+        <option value="blank"></option>
+    </select>
+    <Label>Retake</Label>
+    <input type="checkbox" id="MKTGretake"> 
+    <br><br>
+
+    <p>
+        <label>BYU Overall GPA:</label>
+        <input type="text" id="GPA" size="4">
+        <br><br>
+        <label>BYU Last 30 Credits GPA:</label>
+        <input type="text" id="Last30" size="4">
+    </p>
+    <p> 
+        <input type="button" value="Calculate" onclick="//Put calc functions here --> calcGPA()">
+        <br><br>
+        <input type="button" value="Reset" onclick="clearCircle()">
+    </p>
+    </form>
+    <script>
+        function clearCircle ()
+        {
+            //document.getElementById(/*"whatever the circle id is"*/).style.display = "none";
+            //document.getElementById(/*"whatever the circle id is"*/).style.fill = "none";
+            var dropDown = document.getElementById("IS201");
+            dropDown.selectedIndex = 12;
+
+            dropDown = document.getElementById("IS303");
+            dropDown.selectedIndex = 12;
+
+            dropDown = document.getElementById("ACC200");
+            dropDown.selectedIndex = 12;
+
+            dropDown = document.getElementById("FIN201");
+            dropDown.selectedIndex = 12;
+
+            dropDown = document.getElementById("MKTG201");
+            dropDown.selectedIndex = 12;
+
+            document.getElementById('GPA').value='';
+           
+            document.getElementById('Last30').value='';
+
+            document.getElementById("IS201").focus();
+            
+            
+        }
+
+        function calcGPA () 
+        {
+        var sI201 = document.forms["ISReqs"]["IS201"].value;
+        var sIS303 = document.forms["ISReqs"]["IS303"].value;
+        var sACC = document.forms["ISReqs"]["ACC200"].value;
+        var sFIN = document.forms["ISReqs"]["FIN201"].value;
+        var sMKTG = document.forms["ISReqs"]["MKTG201"].value;
+        var sOverallGPA = document.forms["ISReqs"]["GPA"].value;
+        var sLastGPA = document.forms["ISReqs"]["Last30"].value;
+
+        if (sI201 === "blank" || sI201 === "blank" || sI201 === "blank" || sI201 === "blank" || sI201 === "blank" || sOverallGPA === "" || sLastGPA === "") {
+            alert("You must select an item in each drop down and enter a value in the GPA text boxes!");
+        }
+        else {
+            //do GPA calc and display it (round to two decimal places)
+            
+        }
+
+        if(fTotalGPA >= 3.7) {
+            //display green circle
+        }
+        else if(fTotalGPA >= 3.4) {
+            //display yellow circle
+        }
+        else {
+            //display red circle
+        }
+        }
+    </script>
 </body>
 </html>
