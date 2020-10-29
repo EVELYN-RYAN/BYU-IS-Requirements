@@ -4,178 +4,392 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IS Requirements</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+            body {
+                display: flex;
+                flex-direction: column;
+                align-self: center;
+                align-items: center;
+                justify-content: center;
+                margin: 0 2rem;
+                background-color: #333333;
+                font-family: 'Open Sans', sans-serif;
+            }
+
+            header {
+                display: block;
+
+            }
+
+            h1 {
+                font-size: 5vw;
+                padding: 2rem;
+                border: 2px solid white;
+            }
+
+            h1 p {
+                font-size: 3vw;
+            }
+
+            h1,
+            h1 p {
+                font-family: 'Playfair Display', serif;
+                background-color: navy;
+                color: #ffffff;
+                text-align: center;
+            }
+
+            h2 {
+                font-family: 'Playfair Display', serif;
+                color: white;
+                text-align: center;
+            }
+
+            h3 {
+                font-family: 'Playfair Display', serif;
+                font-weight: 700px;
+                font-size: 1.5rem;
+            }
+
+            p {
+                font-family: 'Open Sans', sans-serif;
+            }
+
+            main {
+                display: flex;
+                background-color: white;
+                padding: 2rem 5rem;
+                flex-wrap: wrap;
+                max-width: 50rem;
+                justify-content: space-between;
+                align-content: space-between;
+            }
+
+            main .description {
+                display: block;
+                flex: 1 0 225px;
+                border: 5px solid #333333;
+                padding: 1rem;
+                margin: 1rem;
+                background-color: lightgrey;
+            }
+
+            .description h2 {
+                color: navy;
+                font-weight: bolder;
+                font-size: 1.9rem;
+            }
+
+            .description span {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .button {
+                text-decoration: none;
+                background-color: white;
+                color: navy;
+                font-family: 'Open Sans', sans-serif;
+                font-weight: bolder;
+                border: 2px solid navy;
+                border-radius: 3px;
+                padding: 9px;
+                transition-property: color, background-color, border;
+                transition-duration: 300ms;
+                transition-timing-function: ease;
+                text-transform: uppercase;
+            }
+
+            .button:hover {
+                color: white;
+                border: 2px solid white;
+                border-radius: 3px;
+                background-color: navy;
+                font-weight: bolder;
+            }
+
+            img {
+                display: block;
+                width: 100%;
+            }
+
+            .description span p {
+                text-align: center;
+            }
+
+            main .form {
+                border: 5px solid navy;
+                padding: 1rem;
+                margin: 1rem;
+                background-color: white;
+                color: #333333;
+            }
+
+            .form .inner {
+                padding: 2rem;
+                border: 5px solid navy;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-content: space-between;
+            }
+
+            div .buttons {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .button-calculate {
+                text-decoration: none;
+                background-color: blue;
+                color: white;
+                font-family: 'Open Sans', sans-serif;
+                font-weight: bolder;
+                border: 2px solid #333333;
+                border-radius: 3px;
+                padding: 9px;
+                transition-property: color, background-color, border;
+                transition-duration: 300ms;
+                transition-timing-function: ease;
+                text-transform: uppercase;
+            }
+
+            .button-calculate:hover {
+                color: blue;
+                border: 2px solid blue;
+                border-radius: 3px;
+                background-color: white;
+                font-weight: bolder;
+            }
+
+            .button-reset {
+                text-decoration: none;
+                background-color: white;
+                color: navy;
+                font-family: 'Open Sans', sans-serif;
+                border: 2px solid navy;
+                border-radius: 2px;
+                transition-property: color, background-color, border;
+                transition-duration: 300ms;
+                transition-timing-function: ease;
+                text-transform: uppercase;
+                font-size: 0.75rem;
+            }
+
+            .button-reset:hover {
+                color: white;
+                border: 1px solid white;
+                border-radius: 2px;
+                background-color: navy;
+                font-weight: bolder;
+            }
+    </style>
 </head>
-<h1>
-    Enter in your respective grades to calculate your chances of getting into the MSB IS program <br>
-Info found here: <a href="https://marriotschool.byu.edu/infosys/">Requirements</a>
-</h1>
+
 <body>
-    <form id="ISReqs" name="myIS">
-        <label>IS 201</label>
-    <select id="IS201" autofocus>
-        <option value="A">A</option>
-        <option value="A-">A-</option>
-        <option value="B+">B+</option>
-        <option value="B">B</option>
-        <option value="B-">B-</option>
-        <option value="C+">C+</option>
-        <option value="C">C</option>
-        <option value="D+">D+</option>
-        <option value="D">D</option>
-        <option value="D-">D-</option>
-        <option value="E">E</option>
-        <option value="blank"></option>
-    </select>
-    <Label> Retake</Label>
-    <input type="checkbox" id="201retake">
-    <br><br>
+    <header>
+        <h1>
+            <p>BYU Information Systems Program:</p>
+            Probability of Acceptance Calculator
+        </h1>
+    </header>
+    <main>
+        <div class="description">
+            <h2>Program Overview</h2>
+            <p>The BS Information Systems program is available as a four-year traditional degree or as a five-year integrated option where students earn both the BS IS and MISM degrees. The BS IS program is a 64-credit degree including pre-management, junior core, management core, and a capstone.</p>
+            <br>
+            <span>
+                <img src="https://marriottschool.byu.edu/upload/news/images/1277-byu_marriott_mba_ranked_by_princeton_review.jpg">
+                <br><br>
+                <p>Want to learn more about the program requirements?</p>
+                <a class="button" href="https://marriotschool.byu.edu/infosys/">Click Here</a>
+            </span>
+        </div>
+        <div class="description">
+            <h2>Curriculum</h2>
+            <p>Information systems students learn to define, develop, and maintain the information system infrastructure that supports the operations of all businesses, governments, and other institutions. The BS Information Systems degree develops the ability to function effectively as a professional, applying state-of-the-art technology in solving business problems. Students are trained in business and information systems and taught to understand complex business environments.
+                <br><br>
+            Built on a solid foundation of business courses, the curriculum advances students’ understanding of technologies in the design and development of information systems. They gain technical expertise in systems analysis; systems design and implementation; database development and management; programming; telecommunications networking; 2-tier, 3-tier, and n-tier application development; and web application development.</p>
+        </div>
+        <div class="form">
+            <div class= "inner">
+                <h3>Enter in your respective grades to calculate your chances of getting into the MSB IS program: <br>
+                </h3>
+                <form id="ISReqs" name="myIS">
+                    <div>
+                        <label>IS 201</label>
+                        <select id="IS201" autofocus>
+                            <option value="A">A</option>
+                            <option value="A-">A-</option>
+                            <option value="B+">B+</option>
+                            <option value="B">B</option>
+                            <option value="B-">B-</option>
+                            <option value="C+">C+</option>
+                            <option value="C">C</option>
+                            <option value="D+">D+</option>
+                            <option value="D">D</option>
+                            <option value="D-">D-</option>
+                            <option value="E">E</option>
+                        </select>
+                        <Label> Retake</Label>
+                        <input type="checkbox" id="201retake">
+                    </div>
+                    <br><br>
+                    <div>
+                        <label>IS 303/CS 142</label>
+                        <select id="IS303">
+                            <option value="A">A</option>
+                            <option value="A-">A-</option>
+                            <option value="B+">B+</option>
+                            <option value="B">B</option>
+                            <option value="B-">B-</option>
+                            <option value="C+">C+</option>
+                            <option value="C">C</option>
+                            <option value="D+">D+</option>
+                            <option value="D">D</option>
+                            <option value="D-">D-</option>
+                            <option value="E">E</option>
+                        </select>
+                        <Label>Retake</Label>
+                        <input type="checkbox" id="303retake">
+                    </div>
+                    <br><br>
+                    <div>
+                        <label>ACC 200</label>
+                        <select id="ACC200">
+                            <option value="A">A</option>
+                            <option value="A-">A-</option>
+                            <option value="B+">B+</option>
+                            <option value="B">B</option>
+                            <option value="B-">B-</option>
+                            <option value="C+">C+</option>
+                            <option value="C">C</option>
+                            <option value="D+">D+</option>
+                            <option value="D">D</option>
+                            <option value="D-">D-</option>
+                            <option value="E">E</option>
+                        </select>
+                        <Label>Retake</Label>
+                        <input type="checkbox" id="ACCretake"> 
+                    </div>
+                    <br><br> 
+                    <div>
+                        <label>FIN 201</label>
+                        <select id="FIN201">
+                            <option value="A">A</option>
+                            <option value="A-">A-</option>
+                            <option value="B+">B+</option>
+                            <option value="B">B</option>
+                            <option value="B-">B-</option>
+                            <option value="C+">C+</option>
+                            <option value="C">C</option>
+                            <option value="D+">D+</option>
+                            <option value="D">D</option>
+                            <option value="D-">D-</option>
+                            <option value="E">E</option>
+                        </select>
+                        <Label>Retake</Label>
+                        <input type="checkbox" id="FINretake"> 
+                    </div>
+                    <br><br> 
+                    <div>
+                        <label>MKTG 201</label>
+                        <select id="MKTG201">
+                            <option value="A">A</option>
+                            <option value="A-">A-</option>
+                            <option value="B+">B+</option>
+                            <option value="B">B</option>
+                            <option value="B-">B-</option>
+                            <option value="C+">C+</option>
+                            <option value="C">C</option>
+                            <option value="D+">D+</option>
+                            <option value="D">D</option>
+                            <option value="D-">D-</option>
+                            <option value="E">E</option>
+                        </select>
+                        <Label>Retake</Label>
+                        <input type="checkbox" id="MKTGretake"> 
+                    </div>
+                    <br><br>
 
-    <label>IS 303/CS 142</label>
-    <select id="IS303">
-        <option value="A">A</option>
-        <option value="A-">A-</option>
-        <option value="B+">B+</option>
-        <option value="B">B</option>
-        <option value="B-">B-</option>
-        <option value="C+">C+</option>
-        <option value="C">C</option>
-        <option value="D+">D+</option>
-        <option value="D">D</option>
-        <option value="D-">D-</option>
-        <option value="E">E</option>
-        <option value="blank"></option>
-    </select>
-    <Label>Retake</Label>
-    <input type="checkbox" id="303retake">
-    <br><br>
-
-    <label>ACC 200</label>
-    <select id="ACC200">
-        <option value="A">A</option>
-        <option value="A-">A-</option>
-        <option value="B+">B+</option>
-        <option value="B">B</option>
-        <option value="B-">B-</option>
-        <option value="C+">C+</option>
-        <option value="C">C</option>
-        <option value="D+">D+</option>
-        <option value="D">D</option>
-        <option value="D-">D-</option>
-        <option value="E">E</option>
-        <option value="blank"></option>
-    </select>
-    <Label>Retake</Label>
-    <input type="checkbox" id="ACCretake"> 
-    <br><br> 
-
-    <label>FIN 201</label>
-    <select id="FIN201">
-        <option value="A">A</option>
-        <option value="A-">A-</option>
-        <option value="B+">B+</option>
-        <option value="B">B</option>
-        <option value="B-">B-</option>
-        <option value="C+">C+</option>
-        <option value="C">C</option>
-        <option value="D+">D+</option>
-        <option value="D">D</option>
-        <option value="D-">D-</option>
-        <option value="E">E</option>
-        <option value="blank"></option>
-    </select>
-    <Label>Retake</Label>
-    <input type="checkbox" id="FINretake"> 
-    <br><br> 
-
-    <label>MKTG 201</label>
-    <select id="MKTG201">
-        <option value="A">A</option>
-        <option value="A-">A-</option>
-        <option value="B+">B+</option>
-        <option value="B">B</option>
-        <option value="B-">B-</option>
-        <option value="C+">C+</option>
-        <option value="C">C</option>
-        <option value="D+">D+</option>
-        <option value="D">D</option>
-        <option value="D-">D-</option>
-        <option value="E">E</option>
-        <option value="blank"></option>
-    </select>
-    <Label>Retake</Label>
-    <input type="checkbox" id="MKTGretake"> 
-    <br><br>
-
-    <p>
-        <label>BYU Overall GPA:</label>
-        <input type="text" id="GPA" size="4">
-        <br><br>
-        <label>BYU Last 30 Credits GPA:</label>
-        <input type="text" id="Last30" size="4">
-    </p>
-    <p> 
-        <input type="button" value="Calculate" onclick="//Put calc functions here --> calcGPA()">
-        <br><br>
-        <input type="button" value="Reset" onclick="clearCircle()">
-    </p>
-    </form>
-    <script>
-        function clearCircle ()
-        {
-            //document.getElementById(/*"whatever the circle id is"*/).style.display = "none";
-            //document.getElementById(/*"whatever the circle id is"*/).style.fill = "none";
-            var dropDown = document.getElementById("IS201");
-            dropDown.selectedIndex = 12;
-
-            dropDown = document.getElementById("IS303");
-            dropDown.selectedIndex = 12;
-
-            dropDown = document.getElementById("ACC200");
-            dropDown.selectedIndex = 12;
-
-            dropDown = document.getElementById("FIN201");
-            dropDown.selectedIndex = 12;
-
-            dropDown = document.getElementById("MKTG201");
-            dropDown.selectedIndex = 12;
-
-            document.getElementById('GPA').value='';
-           
-            document.getElementById('Last30').value='';
-
-            document.getElementById("IS201").focus();
-            
-            
-        }
-
-        function calcGPA () 
-        {
-        var sI201 = document.forms["ISReqs"]["IS201"].value;
-        var sIS303 = document.forms["ISReqs"]["IS303"].value;
-        var sACC = document.forms["ISReqs"]["ACC200"].value;
-        var sFIN = document.forms["ISReqs"]["FIN201"].value;
-        var sMKTG = document.forms["ISReqs"]["MKTG201"].value;
-        var sOverallGPA = document.forms["ISReqs"]["GPA"].value;
-        var sLastGPA = document.forms["ISReqs"]["Last30"].value;
-
-        if (sI201 === "blank" || sI201 === "blank" || sI201 === "blank" || sI201 === "blank" || sI201 === "blank" || sOverallGPA === "" || sLastGPA === "") {
-            alert("You must select an item in each drop down and enter a value in the GPA text boxes!");
-        }
-        else {
-            //do GPA calc and display it (round to two decimal places)
-            
-        }
-
-        if(fTotalGPA >= 3.7) {
-            //display green circle
-        }
-        else if(fTotalGPA >= 3.4) {
-            //display yellow circle
-        }
-        else {
-            //display red circle
-        }
-        }
-    </script>
+                    <div>
+                        <label>BYU Overall GPA:</label>
+                        <input type="text" id="GPA" size="4">
+                        <br><br>
+                        <label>BYU Last 30 Credits GPA:</label>
+                        <input type="text" id="Last30" size="4">
+                    </div>
+                    <br><br>
+                    <div class="buttons"> 
+                        <input class="button-calculate" type="button" value="Calculate" onclick="//Put calc functions here">
+                        <input class= "button-reset" type="button" value="Reset" onclick="clearCircle()">
+                    </div>
+                </div>
+                </form>
+            </div>
+    </main>
 </body>
+<script>
+    function clearCircle ()
+    {
+        //document.getElementById(/*"whatever the circle id is"*/).style.display = "none";
+        //document.getElementById(/*"whatever the circle id is"*/).style.fill = "none";
+        var dropDown = document.getElementById("IS201");
+        dropDown.selectedIndex = 12;
+
+        dropDown = document.getElementById("IS303");
+        dropDown.selectedIndex = 12;
+
+        dropDown = document.getElementById("ACC200");
+        dropDown.selectedIndex = 12;
+
+        dropDown = document.getElementById("FIN201");
+        dropDown.selectedIndex = 12;
+
+        dropDown = document.getElementById("MKTG201");
+        dropDown.selectedIndex = 12;
+
+        document.getElementById('GPA').value='';
+
+        document.getElementById('Last30').value='';
+
+        document.getElementById("IS201").focus();
+
+
+    }
+
+    function calcGPA () 
+    {
+    var sI201 = document.forms["ISReqs"]["IS201"].value;
+    var sIS303 = document.forms["ISReqs"]["IS303"].value;
+    var sACC = document.forms["ISReqs"]["ACC200"].value;
+    var sFIN = document.forms["ISReqs"]["FIN201"].value;
+    var sMKTG = document.forms["ISReqs"]["MKTG201"].value;
+    var sOverallGPA = document.forms["ISReqs"]["GPA"].value;
+    var sLastGPA = document.forms["ISReqs"]["Last30"].value;
+
+    if (sI201 === "blank" || sI201 === "blank" || sI201 === "blank" || sI201 === "blank" || sI201 === "blank" || sOverallGPA === "" || sLastGPA === "") {
+        alert("You must select an item in each drop down and enter a value in the GPA text boxes!");
+    }
+    else {
+        //do GPA calc and display it (round to two decimal places)
+
+    }
+
+    if(fTotalGPA >= 3.7) {
+        //display green circle
+    }
+    else if(fTotalGPA >= 3.4) {
+        //display yellow circle
+    }
+    else {
+        //display red circle
+    }
+    }
+</script>
 </html>
