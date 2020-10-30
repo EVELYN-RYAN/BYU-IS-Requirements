@@ -138,6 +138,7 @@
                 justify-content: flex-start;
                 align-content: space-between;
             }
+                
 
             div .buttons {
                 display: flex;
@@ -187,6 +188,13 @@
                 border-radius: 2px;
                 background-color: navy;
                 font-weight: bolder;
+            }
+             .display-circle {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                width: 50%;
+
             }
     </style>
 </head>
@@ -326,8 +334,15 @@
                     </div>
                     <br><br>
                     <div class="buttons"> 
-                        <input class="button-calculate" type="button" value="Calculate" onclick="calcGPA">
+                        <input class="button-calculate" type="button" value="Calculate" onclick="calcGPA()">
                         <input class= "button-reset" type="button" value="Reset" onclick="clearCircle()">
+                    </div>
+                    <br><br>
+                    <div class="display">
+                        <svg class="display-circle" height="100" width="100">
+                            <circle cx="85" cy="45" r="40" stroke="black" fill="none" stroke-width="4" id="circle" />
+                            <text  id="incircGPA" stroke="black" style="font-size: 1.5em;" style="letter-spacing: .5em;" stroke-width="2px" dy="3.5em" dx="1.5em"></text>
+                        </svg>
                     </div>
                 </div>
                 </form>
@@ -337,8 +352,8 @@
 <script>
     function clearCircle ()
     {
-        //document.getElementById(/*"whatever the circle id is"*/).style.display = "none";
-        //document.getElementById(/*"whatever the circle id is"*/).style.fill = "none";
+        document.getElementById("incircGPA").style.display = "none";
+       // document.getElementById("incircGPA").style.fill = "none";
         var dropDown = document.getElementById("IS201");
         dropDown.selectedIndex = 12;
 
@@ -364,8 +379,114 @@
     }
 
     function calcGPA () 
-    {
-    var sI201 = document.forms["ISReqs"]["IS201"].value;
+{
+        var tempName ='';
+        var aGPAValues = [];
+        var aLetterGrade = [document.forms["ISReqs"]["IS201"].value , document.forms["ISReqs"]["IS303"].value , 
+         document.forms["ISReqs"]["ACC200"].value,
+        document.forms["ISReqs"]["FIN201"].value , document.forms["ISReqs"]["MKTG201"].value ,
+        parseFloat(document.forms["ISReqs"]["GPA"].value) , parseFloat(document.forms["ISReqs"]["Last30"].value)];
+
+        if (document.forms["ISReqs"]["IS201"].value === 12 || document.forms["ISReqs"]["IS303"].value === 12 || 
+         document.forms["ISReqs"]["ACC200"].value === 12 ||
+        document.forms["ISReqs"]["FIN201"].value === 12 || document.forms["ISReqs"]["MKTG201"].value === 12 ||
+        document.forms["ISReqs"]["GPA"].value === "" || document.forms["ISReqs"]["Last30"].value === "")
+        {
+            alert("You must select an item in each drop down and enter a value in the GPA text boxes!")
+        }
+        for (var i=0;i<=5;i++)
+        {
+                switch (i)
+                {
+                    case 0:
+                        {tempName = "201retake"
+                        break;}
+                    case 1:
+                        {tempName = "303retake"
+                        break;}
+                    case 2:
+                        {tempName = "ACCretake"
+                        break;}
+                    case 3:
+                        {tempName = "FINretake"
+                        break;}
+                    case 4:
+                        {tempName = "MKTGretake"
+                        break;}
+                    default:
+                }
+            if (document.getElementById(tempName).checked == true)
+            {
+                if(aLetterGrade[i]==="A"){
+                    aGPAValues.push(3.7)}
+                else if(aLetterGrade[i]==="A-"){
+                    aGPAValues.push(3.4)}
+                else if(aLetterGrade[i]==="B+"){
+                    aGPAValues.push(3)}
+                else if(aLetterGrade[i]==="B"){
+                    aGPAValues.push(2.7)}
+                else if(aLetterGrade[i]==="B-"){
+                    aGPAValues.push(2.4)}
+                else if(aLetterGrade[i]==="C+"){
+                    aGPAValues.push(2)}
+                else if(aLetterGrade[i]==="C"){
+                    aGPAValues.push(1.7)}
+                else if(aLetterGrade[i]==="C-"){
+                    aGPAValues.push(1.4)}
+                else if(aLetterGrade[i]==="D+"){
+                    aGPAValues.push(1)}
+                else if(aLetterGrade[i]==="D"){
+                    aGPAValues.push(.7)}
+                else if(aLetterGrade[i]==="D-"){
+                    aGPAValues.push(0)}
+                else if(aLetterGrade[i]==="E"){
+                    aGPAValues.push(0)}
+            }
+            else
+            {
+                if(aLetterGrade[i]==="A"){
+                    aGPAValues.push(4)}
+                else if(aLetterGrade[i]==="A-"){
+                    aGPAValues.push(3.7)}
+                else if(aLetterGrade[i]==="B+"){
+                    aGPAValues.push(3.4)}
+                else if(aLetterGrade[i]==="B"){
+                    aGPAValues.push(3)}
+                else if(aLetterGrade[i]==="B-"){
+                    aGPAValues.push(2.7)}
+                else if(aLetterGrade[i]==="C+"){
+                    aGPAValues.push(2.4)}
+                else if(aLetterGrade[i]==="C"){
+                    aGPAValues.push(2)}
+                else if(aLetterGrade[i]==="C-"){
+                    aGPAValues.push(1.7)}
+                else if(aLetterGrade[i]==="D+"){
+                    aGPAValues.push(1.4)}
+                else if(aLetterGrade[i]==="D"){
+                    aGPAValues.push(1)}
+                else if(aLetterGrade[i]==="D-"){
+                    aGPAValues.push(.7)}
+                else if(aLetterGrade[i]==="E"){
+                    aGPAValues.push(0)}
+            }
+        } 
+           var fTotalGPA = ((aGPAValues[0] + aGPAValues[1] + ((aGPAValues[2]+aGPAValues[3]+aGPAValues[4])/3) + aLetterGrade[5] + aLetterGrade[6])/5);
+           fTotalGPA = fTotalGPA.toFixed(2); 
+           // Changing the color of the circle
+    if(fTotalGPA >= 3.7) {
+        document.getElementById("circle").style.stroke = "green"
+    }
+    else if(fTotalGPA >= 3.4) {
+        document.getElementById("circle").style.stroke = "yellow"
+    }
+    else {
+        document.getElementById("circle").style.stroke = "red"
+    }
+    document.getElementById("incircGPA").innerHTML = "GPA: " + fTotalGPA
+
+
+
+   /* var sI201 = document.forms["ISReqs"]["IS201"].value;
     var sIS303 = document.forms["ISReqs"]["IS303"].value;
     var sACC = document.forms["ISReqs"]["ACC200"].value;
     var sFIN = document.forms["ISReqs"]["FIN201"].value;
@@ -399,14 +520,14 @@
     }
    
    
-    if(sI201 === "A" && (document.getElementById("201retake") = selected)){
+    if(sI201 === "A" && (document.getElementById("201retake").checked === true)){
         iIs201GradeValue = iGradeValueAmin(.2)
     }
     if(sI201 === "A" ){
         iIs201GradeValue = iGradeValueA(.2)
     }
 
-    if(sI201 === "A-" && (document.getElementById("201retake") = selected)){
+    if(sI201 === "A-" && (document.getElementById("201retake").checked === true)){
         iIs201GradeValue = iGradeValueBplus(.2)
     }
     
@@ -414,7 +535,7 @@
         iIs201GradeValue = iGradeValueBplus(.2)
     }
 
-    if(sI201 === "B+" && (document.getElementById("201retake") = selected)){
+    if(sI201 === "B+" && (document.getElementById("201retake").checked === true)){
         iIs201GradeValue = iGradeValueB(.2)
     }
     else if(sI201 === "B+"){
@@ -771,17 +892,10 @@
         iMktgGradeValue = 0.0
     }
     fTotalGPA = iIs201GradeValue + iIs303GradeValue + iAccGradeValue + iFinGradeValue + iMktgGradeValue + overallGPaGradeValue + lastGpaGradeValue;
-    fTotalGPA = round(fTotalGPA, 2);
+    fTotalGPA = fTotalGPA.toFixed(2);
+    alert(fTotalGPA) 
+    */
     
-    if(fTotalGPA >= 3.7) {
-        //display green circle
-    }
-    else if(fTotalGPA >= 3.4) {
-        //display yellow circle
-    }
-    else {
-        //display red circle
-    }
-    }
+}
 </script>
 </html>
