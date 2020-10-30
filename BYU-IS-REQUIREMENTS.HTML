@@ -326,7 +326,7 @@
                     </div>
                     <br><br>
                     <div class="buttons"> 
-                        <input class="button-calculate" type="button" value="Calculate" onclick="//Put calc functions here">
+                        <input class="button-calculate" type="button" value="Calculate" onclick="calcGPA">
                         <input class= "button-reset" type="button" value="Reset" onclick="clearCircle()">
                     </div>
                 </div>
@@ -372,15 +372,407 @@
     var sMKTG = document.forms["ISReqs"]["MKTG201"].value;
     var sOverallGPA = document.forms["ISReqs"]["GPA"].value;
     var sLastGPA = document.forms["ISReqs"]["Last30"].value;
-
+    var iIs201GradeValue
+    var iIs303GradeValue
+    var iAccGradeValue
+    var iFinGradeValue
+    var iMktgGradeValue
+    var iGradeValueA = 4.0
+    var iGradeValueAmin = 3.7
+    var iGradeValueBplus = 3.4
+    var iGradeValueB = 3.0
+    var iGradeValueBmin = 2.7
+    var iGradeValueCplus = 2.4
+    var iGradeValueC = 2.0
+    var iGradeValueCmin = 1.7
+    var iGradeValueDplus = 1.4
+    var iGradeValueD = 1.0
+    var iGradeValueDmin = 0.7
+    var iGradeValueE = 0.0
+    var overallGPaGradeValue = parseInt(sOverallGPA)(.2)
+    var lastGpaGradeValue = parseInt(sLastGPA)(.2)
     if (sI201 === "blank" || sI201 === "blank" || sI201 === "blank" || sI201 === "blank" || sI201 === "blank" || sOverallGPA === "" || sLastGPA === "") {
         alert("You must select an item in each drop down and enter a value in the GPA text boxes!");
     }
     else {
-        //do GPA calc and display it (round to two decimal places)
 
     }
+   
+   
+    if(sI201 === "A" && (document.getElementById("201retake") = selected)){
+        iIs201GradeValue = iGradeValueAmin(.2)
+    }
+    if(sI201 === "A" ){
+        iIs201GradeValue = iGradeValueA(.2)
+    }
 
+    if(sI201 === "A-" && (document.getElementById("201retake") = selected)){
+        iIs201GradeValue = iGradeValueBplus(.2)
+    }
+    
+    else if(sI201 === "B+"){
+        iIs201GradeValue = iGradeValueBplus(.2)
+    }
+
+    if(sI201 === "B+" && (document.getElementById("201retake") = selected)){
+        iIs201GradeValue = iGradeValueB(.2)
+    }
+    else if(sI201 === "B+"){
+        iIs201GradeValue = iGradeValueBplus(.2)
+    }
+    if(sI201 === "B" && (document.getElementById("201retake") = selected)){
+        iIs201GradeValue = iGradeValueBmin(.2)
+    }
+    else if(sI201 === "B"){
+        iIs201GradeValue = iGradeValueB(.2)
+    }
+    if(sI201 === "B-" && (document.getElementById("201retake") = selected)){
+        iIs201GradeValue = iGradeValueCplus(.2)
+    }
+    else if(sI201 === "B-"){
+        iIs201GradeValue = iGradeValueBmin(.2)
+    }
+    if(sI201 === "C+" && (document.getElementById("201retake") = selected)){
+        iIs201GradeValue = iGradeValueC(.2)
+    }
+    else if(sI201 === "C+"){
+        iIs201GradeValue = iGradeValueCplus(.2)
+    }
+    if(sI201 === "C" && (document.getElementById("201retake") = selected)){
+        iIs201GradeValue = iGradeValueCmin(.2)
+    }
+    else if(sI201 === "C"){
+        iIs201GradeValue = iGradeValueC(.2)
+    }
+    if(sI201 === "C-" && (document.getElementById("201retake") = selected)){
+        iIs201GradeValue = iGradeValueDplus(.2)
+    }
+    else if(sI201 === "C-"){
+        iIs201GradeValue = iGradeValueCmin(.2)
+    }
+    if(sI201 === "D+" && (document.getElementById("201retake") = selected)){
+        iIs201GradeValue = iGradeValueD(.2)
+    }
+    else if(sI201 === "D+"){
+        iIs201GradeValue = iGradeValueDplus(.2)
+    }
+    if(sI201 === "D" && (document.getElementById("201retake") = selected)){
+        iIs201GradeValue = iGradeValueDmin(.2)
+    }
+    else if(sI201 === "D"){
+        iIs201GradeValue = iGradeValueD(.2)
+    }
+    if(sI201 === "D-" && (document.getElementById("201retake") = selected)){
+        iIs201GradeValue = iGradeValueE
+    }
+    else if(sI201 === "D-"){
+        iIs201GradeValue = iGradeValueDmin(.2)
+    }
+    else{
+        iIs201GradeValue = 0.0
+    }
+
+
+
+    if(sIS303 === "A" && (document.getElementById("303retake") = selected)){
+        iIs303GradeValue = iGradeValueAmin(.2)
+    }
+    if(sIS303 === "A" ){
+        iIs303GradeValue = iGradeValueA(.2)
+    }
+
+    if(sIS303 === "A-" && (document.getElementById("303retake") = selected)){
+        iIs303GradeValue = iGradeValueBplus(.2)
+    }
+    
+    else if(sIS303 === "B+"){
+        iIs303GradeValue = iGradeValueBplus(.2)
+    }
+
+    if(sIS303 === "B+" && (document.getElementById("303retake") = selected)){
+        iIs303GradeValue = iGradeValueB(.2)
+    }
+    else if(sIS303 === "B+"){
+        iIs303GradeValue = iGradeValueBplus(.2)
+    }
+    if(sIS303 === "B" && (document.getElementById("303retake") = selected)){
+        iIs303GradeValue = iGradeValueBmin(.2)
+    }
+    else if(sIS303 === "B"){
+        iIs303GradeValue = iGradeValueB(.2)
+    }
+    if(sI303 === "B-" && (document.getElementById("303retake") = selected)){
+        iIs303GradeValue = iGradeValueCplus(.2)
+    }
+    else if(sIS303 === "B-"){
+        iIs303GradeValue = iGradeValueBmin(.2)
+    }
+    if(sIS303 === "C+" && (document.getElementById("303retake") = selected)){
+        iIs303GradeValue = iGradeValueC(.2)
+    }
+    else if(sIS303 === "C+"){
+        iIs303GradeValue = iGradeValueCplus(.2)
+    }
+    if(sIS303 === "C" && (document.getElementById("303retake") = selected)){
+        iIs303GradeValue = iGradeValueCmin(.2)
+    }
+    else if(sIS303 === "C"){
+        iIs303GradeValue = iGradeValueC(.2)
+    }
+    if(sIS303 === "C-" && (document.getElementById("303retake") = selected)){
+        iIs303GradeValue = iGradeValueDplus(.2)
+    }
+    else if(sIS303 === "C-"){
+        iIs303GradeValue = iGradeValueCmin(.2)
+    }
+    if(sIS303 === "D+" && (document.getElementById("303retake") = selected)){
+        iIs303GradeValue = iGradeValueD(.2)
+    }
+    else if(sIS303 === "D+"){
+        iIs303GradeValue = iGradeValueDplus(.2)
+    }
+    if(sIS303 === "D" && (document.getElementById("303retake") = selected)){
+        iIs303GradeValue = iGradeValueDmin(.2)
+    }
+    else if(sIS303 === "D"){
+        iIs303GradeValue = iGradeValueD(.2)
+    }
+    if(sIS303 === "D-" && (document.getElementById("303retake") = selected)){
+        iIs303GradeValue = iGradeValueE
+    }
+    else if(sIS303 === "D-"){
+        iIs303GradeValue = iGradeValueDmin(.2)
+    }
+    else{
+        iIs303GradeValue = 0.0
+    }
+
+
+
+    if(sACC === "A" && (document.getElementById("ACCretake") = selected)){
+        iAccGradeValue = (iGradeValueAmin(.2))/3
+    }
+    else if(sACC === "A" ){
+        iAccGradeValue = (iGradeValueA(.2))/3
+    }
+
+    if(sACC === "A-" && (document.getElementById("ACCretake") = selected)){
+        iAccGradeValue = (iGradeValueB(.2))/3
+    }
+    
+    else if(sACC === "B+"){
+        iAccGradeValue = (iGradeValueBplus(.2))/3
+    }
+
+    if(sACC === "B+" && (document.getElementById("ACCretake") = selected)){
+        iAccGradeValue = (iGradeValueB(.2))/3
+    }
+    else if(sACC === "B+"){
+        iAccGradeValue = (iGradeValueBplus(.2))/3
+    }
+    if(sACC === "B" && (document.getElementById("ACCretake") = selected)){
+        iAccGradeValue = (iGradeValueBmin(.2))/3
+    }
+    else if(sACC === "B"){
+        iAccGradeValue = (iGradeValueB(.2))/3
+    }
+    if(sACC === "B-" && (document.getElementById("ACCretake") = selected)){
+        iAccGradeValue = (iGradeValueCplus(.2))/3
+    }
+    else if(sACC === "B-"){
+        iAccGradeValue = (iGradeValueBmin(.2))/3
+    }
+    if(sACC === "C+" && (document.getElementById("ACCretake") = selected)){
+        iAccGradeValue = (iGradeValueC(.2))/3
+    }
+    else if(sACC === "C+"){
+        iAccGradeValue = (iGradeValueCplus(.2))/3
+    }
+    if(sACC === "C" && (document.getElementById("ACCretake") = selected)){
+        iAccGradeValue = (iGradeValueCmin(.2))/3
+    }
+    else if(sACC === "C"){
+        iAccGradeValue = (iGradeValueC(.2))/3
+    }
+    if(sACC === "C-" && (document.getElementById("ACCretake") = selected)){
+        iAccGradeValue = (iGradeValueDplus(.2))/3
+    }
+    else if(sACC === "C-"){
+        iAccGradeValue = (iGradeValueCmin(.2))/3
+    }
+    if(sACC === "D+" && (document.getElementById("ACCretake") = selected)){
+        iAccGradeValue = (iGradeValueD(.2))/3
+    }
+    else if(sACC === "D+"){
+        iAccGradeValue = (iGradeValueDplus(.2))/3
+    }
+    if(sACC === "D" && (document.getElementById("ACCretake") = selected)){
+        iAccGradeValue = (iGradeValueDmin(.2))/3
+    }
+    else if(sACC === "D"){
+        iAccGradeValue = (iGradeValueD(.2))/3
+    }
+    if(sACC === "D-" && (document.getElementById("ACCretake") = selected)){
+        iAccGradeValue = iGradeValueE
+    }
+    else if(sACC === "D-"){
+        iAccGradeValue = (iGradeValueDmin(.2))/3
+    }
+    else{
+        iAccGradeValue = 0.0
+    }
+
+
+
+    if(sFIN === "A" && (document.getElementById("FINretake") = selected)){
+        iFinGradeValue = (iGradeValueAmin(.2))/3
+    }
+    if(sFIN === "A" ){
+        iFinGradeValue = (iGradeValueA(.2))/3
+    }
+
+    if(sFIN === "A-" && (document.getElementById("FINretake") = selected)){
+        iFinGradeValue = (iGradeValueB(.2))/3
+    }
+    
+    if(sFIN === "B+"){
+        iFinGradeValue = (iGradeValueBplus(.2))/3
+    }
+
+    if(sFIN === "B+" && (document.getElementById("FINretake") = selected)){
+        iFinGradeValue = (iGradeValueB(.2))/3
+    }
+    else if(sFIN === "B+"){
+        iFinGradeValue = (iGradeValueBplus(.2))/3
+    }
+    if(sFIN === "B" && (document.getElementById("FINretake") = selected)){
+        iFinGradeValue = (iGradeValueBmin(.2))/3
+    }
+    else if(sFIN === "B"){
+        iFInGradeValue = (iGradeValueB(.2))/3
+    }
+    if(sFIN === "B-" && (document.getElementById("FINretake") = selected)){
+        iFinGradeValue = (iGradeValueCplus(.2))/3
+    }
+    else if(sFIN === "B-"){
+        iFinGradeValue = (iGradeValueBmin(.2))/3
+    }
+    if(sFIN === "C+" && (document.getElementById("FINretake") = selected)){
+        iFinGradeValue = (iGradeValueC(.2))/3
+    }
+    else if(sFIN === "C+"){
+        iFinGradeValue = (iGradeValueCplus(.2))/3
+    }
+    if(sFIN === "C" && (document.getElementById("FINretake") = selected)){
+        iFinGradeValue = (iGradeValueCmin(.2))/3
+    }
+    else if(sFIN === "C"){
+        iFinGradeValue = (iGradeValueC(.2))/3
+    }
+    if(sFIN === "C-" && (document.getElementById("FINretake") = selected)){
+        iFinGradeValue = (iGradeValueDplus(.2))/3
+    }
+    else if(sFIN === "C-"){
+        iFinGradeValue = (iGradeValueCmin(.2))/3
+    }
+    if(sFIN === "D+" && (document.getElementById("FINretake") = selected)){
+        iFinGradeValue = (iGradeValueD(.2))/3
+    }
+    else if(sFIN === "D+"){
+        iFinGradeValue = (iGradeValueDplus(.2))/3
+    }
+    if(sFIN === "D" && (document.getElementById("FINretake") = selected)){
+        iFinGradeValue = (iGradeValueDmin(.2))/3
+    }
+    else if(sFIN === "D"){
+        iFinGradeValue = (iGradeValueD(.2))/3
+    }
+    if(sFIN === "D-" && (document.getElementById("FINretake") = selected)){
+        iFinGradeValue = iGradeValueE
+    }
+    else if(sFIN === "D-"){
+        iFinGradeValue = (iGradeValueDmin(.2))/3
+    }
+    else{
+        iFinGradeValue = 0.0
+    }
+
+
+    if(sMKTG === "A" && (document.getElementById("MKTGretake") = selected)){
+        iMktgGradeValue = (iGradeValueAmin(.2))/3
+    }
+    if(sMKTG === "A" ){
+        iMktgGradeValue = (iGradeValueA(.2))/3
+    }
+
+    if(sMKTG === "A-" && (document.getElementById("MKTGretake") = selected)){
+        iMktgGradeValue = (iGradeValueB(.2))/3
+    }
+    
+    if(sMKTG === "B+"){
+        iMktgGradeValue = (iGradeValueBplus(.2))/3
+    }
+
+    if(sMKTG === "B+" && (document.getElementById("MKTGretake") = selected)){
+        iMktgGradeValue = (iGradeValueB(.2))/3
+    }
+    else if(sMKTG === "B+"){
+        iMktgGradeValue = (iGradeValueBplus(.2))/3
+    }
+    if(sMKTG === "B" && (document.getElementById("MKTGretake") = selected)){
+        iMktgGradeValue = (iGradeValueBmin(.2))/3
+    }
+    else if(sMKTG === "B"){
+        iMktgGradeValue = (iGradeValueB(.2))/3
+    }
+    if(sMKTG === "B-" && (document.getElementById("MKTGretake") = selected)){
+        iMktgGradeValue = (iGradeValueCplus(.2))/3
+    }
+    else if(sMKTG === "B-"){
+        iMKTGGradeValue = (iGradeValueBmin(.2))/3
+    }
+    if(sMKTG === "C+" && (document.getElementById("MKTGretake") = selected)){
+        iMktgGradeValue = (iGradeValueC(.2))/3
+    }
+    else if(sMKTG === "C+"){
+        iMktgGradeValue = (iGradeValueCplus(.2))/3
+    }
+    if(sMKTG === "C" && (document.getElementById("MKTGretake") = selected)){
+        iMktgGradeValue = (iGradeValueCmin(.2))/3
+    }
+    else if(sMKTG === "C"){
+        iMktgGradeValue = (iGradeValueC(.2))/3
+    }
+    if(sMKTG === "C-" && (document.getElementById("MKTGretake") = selected)){
+        iMktgGradeValue = (iGradeValueDplus(.2))/3
+    }
+    else if(sMKTG === "C-"){
+        iMktgGradeValue = (iGradeValueCmin(.2))/3
+    }
+    if(sMKTG === "D+" && (document.getElementById("MKTGretake") = selected)){
+        iMKTGGradeValue = (iGradeValueD(.2))/3
+    }
+    else if(sMKTG === "D+"){
+        iMktgGradeValue = (iGradeValueDplus(.2))/3
+    }
+    if(sMKTG === "D" && (document.getElementById("MKTGretake") = selected)){
+        iMktgGradeValue = (iGradeValueDmin(.2))/3
+    }
+    else if(sMKTG === "D"){
+        iMktgGradeValue = (iGradeValueD(.2))/3
+    }
+    if(sMKTG === "D-" && (document.getElementById("MKTGretake") = selected)){
+        iMktgGradeValue = iGradeValueE
+    }
+    else if(sMKTG === "D-"){
+        iMktgGradeValue = (iGradeValueDmin(.2))/3
+    }
+    else{
+        iMktgGradeValue = 0.0
+    }
+    fTotalGPA = iIs201GradeValue + iIs303GradeValue + iAccGradeValue + iFinGradeValue + iMktgGradeValue + overallGPaGradeValue + lastGpaGradeValue;
+    fTotalGPA = round(fTotalGPA, 2);
+    
     if(fTotalGPA >= 3.7) {
         //display green circle
     }
